@@ -1,7 +1,7 @@
 <?php
 $title = "Index.php pradinis puslapis";
 include 'header.php';?>
-<div class="container">
+<div class="bottom-padding">
     <form>
         <div class="form-group">
           <label for="formGroupExampleInput">Pavadinimas</label>

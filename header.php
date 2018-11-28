@@ -20,10 +20,12 @@ if (isset($_SESSION['currentPage']) && $_SESSION['currentPage'] !== $actual_link
 		<link rel="stylesheet" href="css/main.css"> 
         <link rel="icon" type="image/png" href="myicon.png">
 	</head>
-	<body class = "jumbotron">
-		<div class="container">
-		<?php if (!isset($_SESSION['username'])){ ?> 
-				
-		<?php } ?>
+	<body>
+	
+		
+			<?php include_once 'top-menu.php';?>				
+		
+	<div class="container btm-p">	
+		
 
 

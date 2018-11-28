@@ -58,7 +58,7 @@
     <?php } ?>
     
     <?php if(!isset($_SESSION['username']) && !isset($_GET['registration'])){?>
-    <div class="container col-xs-12 col-lg-3">
+    <div class="col-xs-12 col-lg-3 btm-p">
         <img class="centered" src="img/logo.png">
         <div class="col-12 col-lg-3 login clearfix">
 
@@ -90,9 +90,8 @@
 
 <?php if (isset($_GET['registration'])){?>
 
- <div class="container col-xs-12 col-lg-3">
+ <div class="col-xs-12 col-lg-3 btm-p">
         <form class="form-signin" method="POST" action="login.php">
-            <img class="centered" src="img/logo.png">
             <h1 class="h3 mb-3 font-weight-normal">Join to us!!!</h1>
             <label for="inputusername" class="sr-only">User Name</label>
             <input type="text" id="inputusername" name="username" class="form-control mb-3" placeholder="UserName" required autofocus>

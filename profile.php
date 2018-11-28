@@ -28,13 +28,13 @@
         }
     }
 } ?>
-<div class="container">
-    <div id="crawls" class="container">
+
+    <div id="crawls">
         <?php if (!isset($_SESSION['username'])){ include "assets/please_login.html";} else {?>
            <?php ?>
             <div>
                 <div class="row">
-                    <nav class="col-md-3 d-none d-md-block bg-light sidebar">
+                    <nav class="col-12 col-md-3 bg-light sidebar">
                         <div class="sidebar-sticky">
                             <ul class="nav flex-column">
                                 <li class="nav-item text-uppercase">
@@ -67,7 +67,7 @@
                             </ul>
                         </div>
                     </nav>
-                    <div class="col-md-9 d-none d-md-block bg-light sidebar">
+                    <div class="col-12 col-md-9 bg-light sidebar">
                     
                     <?php if (isset($_GET['customer']) || count($_GET) == 0) {?>
                         <h3 class="text-primary text-uppercase" style="border-bottom: 2px solid;" >Profile</h3>
@@ -127,7 +127,7 @@
 
 
         <?php } ?>
-</div>
+    </div>
 
 <?php include 'footer.php'; ?>
 

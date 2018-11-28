@@ -7,6 +7,9 @@ html {
     background-position: center;
     background-repeat: no-repeat;
 }
+body{
+    background: none !important;
+}
 .main-color{
     background: #ff9800;
     border: 2px solid white;
@@ -21,20 +24,36 @@ html {
     transform: translate(-50%, -50%);
     z-index:-3;
 }
-.jumbotron{
-    background: none !important;
-}
 .bottom{
     position:fixed;
     width:100%;
     bottom:0px;
     background: #ff9800;
+    max-height: 50px;
+}
+.topMenu{
+    width:100%;
+    top:0px;
+    background: #ff9800;
+    max-height: 50px;
+    border-bottom: black 2px solid;
+}
+
+.bottom-img {
+    max-height: 50px;
+    display: block;
+}
+p.bottom-text {
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    margin-bottom: 5px!important;
 }
 .login{
     position:fixed;
     width:100%;
     bottom:100px;
 }
-.max-height{
-    height: 100%;
+.btm-p{
+    padding-bottom: 75px;
 }
