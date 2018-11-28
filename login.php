@@ -1,10 +1,10 @@
-<?php include 'header.php'; ?>
-    <div class="container">
+<?php include_once 'config.php'; ?>
+<?php include_once 'header.php'; ?>
     <?php if (isset($_POST['login'])){ ?>
-        <?php   
         
+        <?php   
             $userName = $_POST['username'];
-            $passWord = $_POST['password'];
+            $passWord = $_POST['password1'];
 
             $sql = "SELECT * FROM users WHERE username = '$userName'";
             $result = $conn->query($sql);
@@ -17,8 +17,8 @@
                         $_SESSION['userid'] = $row['id'];
                         $_SESSION['created'] = $row['created'];
                         $_SESSION['email'] = $row['email'];
+                        header('Location: index.php');
                     }?>
-                    <?php header('Location: index.php'); ?>
                 <?php } ?>
             <?php } ?>
         <?php } ?>
@@ -56,31 +56,43 @@
             </div>
         <?php } ?>
     <?php } ?>
+    
     <?php if(!isset($_SESSION['username']) && !isset($_GET['registration'])){?>
-    <div class="container col-sm-12 col-lg-3">
-        <form class="form-signin" method="POST" action="login.php">
-            <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-            <label for="inputEmail" class="sr-only">User Name</label>
-                <input type="text" id="inputEmail" name="username" class="form-control mb-3" placeholder="UserName" required autofocus>
-            <label for="inputPassword" class="sr-only">Password</label>
-                <input type="password" id="inputPassword" name="password" class="form-control mb-3" placeholder="Password" required>
-            <div class="checkbox mb-3">
-                <label>
-                <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit" name="login" value="Login">Sign in</button>
-        </form>
+    <div class="container col-xs-12 col-lg-3">
+        <img class="centered" src="img/logo.png">
+        <div class="col-12 col-lg-3 login clearfix">
+
+                <form class="form-signin col-12 pl-2" method="POST" action="login.php">
+                    <div class='row'>
+                        <div class='col-xs-12 clearfix'>        
+                            <div class='col-xs-8 float-left pr-0'>
+                                <input type="text" id="inputusername" name="username" class="form-control" placeholder="UserName" required autofocus>
+                                <input type="password" id="inputPassword" name="password1" class="form-control" placeholder="Password" required>
+                            </div>
+                            <div class='col-xs-4 float-right max-height pl-0'>
+                                <button class="btn max-height main-color" type="submit" name="login" value="Login">Sign in</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            
+                <div class="row">
+                    <div class="col-12 clearfix pl-0">
+                            <div class="col-6 float-left pl-0"><h6><a href="login.php?registration" target="_self">REGISTER</a></h6></div>
+                            <div class="col-6 float-right pl-0"><h6>FORGOT PASSWORD</h6></div>
+                    </div>
+                </div>
+    
+        </div>
     </div>
     <?php }?>
 
 
 <?php if (isset($_GET['registration'])){?>
 
- <div class="container col-sm-12 col-lg-3">
+ <div class="container col-xs-12 col-lg-3">
         <form class="form-signin" method="POST" action="login.php">
-            <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+            <img class="centered" src="img/logo.png">
             <h1 class="h3 mb-3 font-weight-normal">Join to us!!!</h1>
             <label for="inputusername" class="sr-only">User Name</label>
             <input type="text" id="inputusername" name="username" class="form-control mb-3" placeholder="UserName" required autofocus>
@@ -95,5 +107,3 @@
     </div>
 
 <?php } ?>
-</div>
-<?php include 'footer.php'; ?>
